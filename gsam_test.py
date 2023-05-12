@@ -1,4 +1,4 @@
-"""Tests for look_sharpness_aware_minimization."""
+"""Tests for gap_sharpness_aware_minimization."""
 
 import os
 
@@ -6,7 +6,7 @@ import tensorflow as tf
 from absl.testing import parameterized
 
 import keras
-from look_sharpness_aware_minimization import LookSharpnessAwareMinimization
+from gasm import GapSharpnessAwareMinimization
 from keras.optimizers.optimizer_experimental import adam
 from keras.testing_infra import test_utils
 
@@ -32,7 +32,7 @@ class SharpnessAwareMinimizationTest(tf.test.TestCase, parameterized.TestCase):
                 keras.layers.Dense(4),
             ]
         )
-        sam_model = LookSharpnessAwareMinimization(
+        sam_model = GapSharpnessAwareMinimization(
             model
         )
         data = tf.random.uniform([2, 2])
@@ -50,7 +50,7 @@ class SharpnessAwareMinimizationTest(tf.test.TestCase, parameterized.TestCase):
                     keras.layers.Dense(1),
                 ]
             )
-            sam_model = LookSharpnessAwareMinimization(
+            sam_model = GapSharpnessAwareMinimization(
                 model
             )
             data = tf.random.uniform([2, 2])
@@ -75,7 +75,7 @@ class SharpnessAwareMinimizationTest(tf.test.TestCase, parameterized.TestCase):
                     keras.layers.Dense(1),
                 ]
             )
-            sam_model = LookSharpnessAwareMinimization(
+            sam_model = GapSharpnessAwareMinimization(
                 model, num_batch_splits=4
             )
             data = tf.random.uniform([48, 2])
@@ -96,7 +96,7 @@ class SharpnessAwareMinimizationTest(tf.test.TestCase, parameterized.TestCase):
                 keras.layers.Dense(1),
             ]
         )
-        sam_model = LookSharpnessAwareMinimization(
+        sam_model = GapSharpnessAwareMinimization(
             model
         )
         data = tf.random.uniform([1, 2, 2])
@@ -124,10 +124,10 @@ class SharpnessAwareMinimizationTest(tf.test.TestCase, parameterized.TestCase):
                 keras.layers.Dense(1),
             ]
         )
-        sam_model_1 = LookSharpnessAwareMinimization(
+        sam_model_1 = GapSharpnessAwareMinimization(
             model
         )
-        sam_model_2 = LookSharpnessAwareMinimization(
+        sam_model_2 = GapSharpnessAwareMinimization(
             model
         )
         data = tf.random.uniform([1, 2, 2])
