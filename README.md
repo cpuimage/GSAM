@@ -3,6 +3,6 @@ This is unofficial repository for [Surrogate Gap Minimization Improves Sharpness
 
 Sharpness-aware minimization (SAM) is a technique that improves the model generalization and provides robustness to label noise.
 
-[google-research's GSAM implementation](https://github.com/google-research/big_vision/blob/main/big_vision/trainers/proj/gsam/gsam.py)
+[JAX implementation of GSAM](https://github.com/google-research/big_vision/blob/main/big_vision/trainers/proj/gsam/gsam.py)
 
  
